@@ -3,12 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ProductsProvider from './Context/ProductsProvider';
+import '../node_modules/react-bootstrap/dist/react-bootstrap'
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import CartProvider from './Context/CartProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <CartProvider>
+  <ProductsProvider>
   <React.StrictMode>
     <App />
   </React.StrictMode>
+  </ProductsProvider>
+  </CartProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
